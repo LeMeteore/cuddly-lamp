@@ -69,18 +69,24 @@ class CalculatorBis:
 
 
 class CalculatorApp:
-    """
-    2 attributes:
-    - a reader of type StdInputReader, or TextFileInputReader
-    - a calculator of type CalculatorIterative or CalculatorRecursive
+    def __init__(self, reader, calculator):
+        """
+        Attributes:
+        - a reader of type
+        - a calculator of type
+        """
+        self.reader = reader  # type InputReader
+        self.calculator = calculator  # type Calculator
 
+    def calculate(self) -> int:
+        """
+        Calculate, tribonacci
+        - of the number returned by the self.reader attribute
+        - using the self.calculator attribute
+        Returns an integer
+        """
+        return self.calculator.tribonacci(self.reader.get_input())
 
-    1 method named calculate:
-    - to calculate the tribonacci of the number returned by the self.reader attribute
-    - using the self.calculator attribute
-
-    - That method shoud returns an integer
-    """
 
 
 def main():
