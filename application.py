@@ -51,6 +51,15 @@ class TextFileInputReader:
         """
         self.file_location = file_location
 
+    def get_input(self) -> int:
+        """
+        Reads input from the given file location and converts it to integer
+        """
+        f = open(self.file_location, "r")
+        number = int(f.read())
+        f.close()
+        return number
+
 
 class Calculator:
     """
