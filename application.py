@@ -32,10 +32,13 @@ class StdInputReader:
     """
     This class inherits InputReader.
     and makes reading an integer from the standard input.
-
-    This class should have one method:
-    - To read input from from the keyboard, convert it to integer and return it
     """
+
+    def get_input(self) -> int:
+        """
+        Reads input from standard input and converts it to integer.
+        """
+        return int(input("Input a number: "))
 
 
 class TextFileInputReader:
