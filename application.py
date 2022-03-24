@@ -97,5 +97,13 @@ def main():
         sys.exit("Bye")
 
 
+def main34():
+    app1 = CalculatorApp(StdInputReader(), Calculator())
+    print(app1.calculate())
+
+    app2 = CalculatorApp(TextFileInputReader("./input.txt"), CalculatorBis())
+    print(app2.calculate())
+
+
 if __name__ == "__main__":
     main()
