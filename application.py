@@ -42,14 +42,14 @@ class TextFileInputReader:
     """
     This class inherits InputReader
     and makes reading an integer from a text file.
-
-    This class should have one attributes:
-    - file_location (String): The location of the input file.
-
-    This class should have one method:
-    - To read input from the given file location, convert it to integer and return it
-
     """
+
+    def __init__(self, file_location: str):
+        """
+        Attributes:
+        - file_location (String): The location of the input file.
+        """
+        self.file_location = file_location
 
 
 class Calculator:
