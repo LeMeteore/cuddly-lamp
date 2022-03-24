@@ -28,7 +28,7 @@ class InputReader(ABC):
         pass
 
 
-class StdInputReader:
+class StdInputReader(InputReader):
     """
     This class inherits InputReader.
     and makes reading an integer from the standard input.
@@ -36,9 +36,12 @@ class StdInputReader:
     This class should have one method:
     - To read input from from the keyboard, convert it to integer and return it
     """
+    def get_input(self):
+        number = int(input("Please type a number: "))
+        return number
 
 
-class TextFileInputReader:
+class TextFileInputReader(InputReader):
     """
     This class inherits InputReader
     and makes reading an integer from a text file.
@@ -50,6 +53,19 @@ class TextFileInputReader:
     - To read input from the given file location, convert it to integer and return it
 
     """
+    def __init__(self, file_location):
+        self.file_location = file_location
+
+    def get_input(self):
+        f = open(self.file_location, "r")
+        number = int(f.read())
+        f.close()
+        return number
+
+    def get_input2(self):
+        with open(self.file_location, "r") as f:
+            number = int(f.read())
+        return number
 
 
 class Calculator:
