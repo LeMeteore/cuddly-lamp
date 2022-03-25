@@ -28,11 +28,14 @@ class InputReader(ABC):
         pass
 
 
-class StdInputReader:
+class StdInputReader(InputReader):
     """
     This class inherits InputReader.
     and makes reading an integer from the standard input.
     """
+    def get_input(self):
+        number = int(input("Please type a number: "))
+        return number
 
     def get_input(self) -> int:
         """
@@ -41,7 +44,7 @@ class StdInputReader:
         return int(input("Input a number: "))
 
 
-class TextFileInputReader:
+class TextFileInputReader(InputReader):
     """
     This class inherits InputReader
     and makes reading an integer from a text file.
@@ -54,10 +57,7 @@ class TextFileInputReader:
         """
         self.file_location = file_location
 
-    def get_input(self) -> int:
-        """
-        Reads input from the given file location and converts it to integer
-        """
+    def get_input(self):
         f = open(self.file_location, "r")
         number = int(f.read())
         f.close()
