@@ -62,6 +62,12 @@ class TextFileInputReader(InputReader):
         number = int(f.read())
         f.close()
         return number
+# juste un exemple de modification
+    def get_input2(self):
+        s = open(self.file_location, "r")
+        number = int(s.read())
+        s.close()
+        return number
 
 
 class Calculator:
