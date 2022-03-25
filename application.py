@@ -65,19 +65,32 @@ class TextFileInputReader:
 
 
 class Calculator:
-    """
-    One method named: tribonacci
-    - one parameter: n
-    - one returned value: tribonacci of n using the recursive process
-    """
+    def tribonacci(self, n):
+        if n == 0 or n == 1:
+            return 0
+        elif n == 2:
+            return 1
+        else:
+            res = (
+                self.tribonacci(n - 3) + self.tribonacci(n - 2) + self.tribonacci(n - 1)
+            )
+        return res
 
 
 class CalculatorBis:
-    """
-    One method named: tribonacci
-    - one parameter: n
-    - one returned value: tribonacci of n using the iterative process
-    """
+    def tribonacci(self, n):
+        p3, p2, p1 = 0, 0, 1
+        if n < 2:
+            return 0
+        elif n == 2:
+            return 1
+        else:
+            for i in range(3, n+1):
+                trib = p3 + p2 + p1
+                p3 = p2
+                p2 = p1
+                p1 = trib
+        return trib
 
 
 class CalculatorApp:
