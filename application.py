@@ -42,7 +42,8 @@ class StdInputReader(InputReader):
         Reads input from standard input and converts it to integer.
         """
         return int(input("Input a number: "))
-
+    def shared(self):
+        ...
 
 class TextFileInputReader(InputReader):
     """
